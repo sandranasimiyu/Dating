@@ -1,0 +1,64 @@
+.sign,
+.Register-cont {
+  margin: 10rem auto;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  line-height: 2;
+  padding-bottom: 1rem;
+  box-shadow: 0 8px 128px rgba(245, 63, 124, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.995);
+  color: #3d2c2e;
+  border-radius: 2%;
+  width: 50%;
+}
+.sign p {
+  font-size: 1rem;
+}
+.create-name {
+  margin: 1.5rem auto;
+}
+.log {
+  padding: 1rem 10rem;
+}
+.svgs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+
+  justify-content: center;
+}
+.svgs img {
+  width: 2rem;
+  height: 2rem;
+}
+.dont,
+.have {
+  color: #ff4081;
+}
+.fog,
+.dont,
+.have {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3rem;
+}
+body {
+  background: radial-gradient(circle, #fff0f3 0%, #ffc0cb 100%);
+}
+#check {
+  color: #3d2c2e;
+  margin-right: 0;
+}
+.check {
+  display: flex;
+  align-items: center;
+}
+.agree {
+  margin-left: -7rem;
+}
+.btn-3,
+.btn-4,
+.dont,
+.fog {
+  margin-bottom: 1rem;
+}
