@@ -5,7 +5,7 @@
 }
 
 .Container {
-  height: 100vh;
+  height: 110vh;
   background-color: #fff8f0;
   color: #3d2c2e;
 }
@@ -43,7 +43,7 @@ input {
 .left-cont {
   width: 120%;
 }
-.left-cont img {
+.right-cont img {
   width: 110%;
   height: 90%;
   border-radius: 2%;
