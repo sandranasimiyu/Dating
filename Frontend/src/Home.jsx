@@ -6,7 +6,7 @@ const Login = () => {
     <div className="Container">
       <div className="top-cont">
         <div className="name">
-          <h1>Kindlee</h1>
+          <h1>Kindle</h1>
         </div>
         <div>
           <a className="tags" href="#">
