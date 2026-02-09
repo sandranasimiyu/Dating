@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setUser(null);
+    alert("Logged out successfully!");
+  };
+
   return (
     <div className="Container">
       <div className="top-cont">
@@ -9,15 +27,38 @@ const Login = () => {
           <h1>Kindlee</h1>
         </div>
         <div>
-          <a className="tags" href="#">
+          <Link className="tags" to="/">
             Home
-          </a>
-          <a className="tags" href="#">
-            Log In
-          </a>
-          <a className="tags" href="#">
-            Join
-          </a>
+          </Link>
+          {user ? (
+            <>
+              <span className="tags" style={{ cursor: "default" }}>
+                Hi, {user.firstName}
+              </span>
+              <button 
+                className="tags" 
+                onClick={handleLogout}
+                style={{ 
+                  background: "none", 
+                  border: "none", 
+                  cursor: "pointer",
+                  color: "inherit",
+                  font: "inherit"
+                }}
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="tags" to="/signing">
+                Log In
+              </Link>
+              <Link className="tags" to="/register">
+                Join
+              </Link>
+            </>
+          )}
           <a className="tags" href="#">
             About Us
           </a>
@@ -38,14 +79,27 @@ const Login = () => {
             <h4>Real people. Real dates. Really simple.</h4>
           </div>
           <div>
-            <button className="btn-2">View Profiles</button>
-            <button className="btn-1">Sign Up</button>
+            <button 
+              className="btn-2"
+              onClick={() => {
+                if (user) {
+                  alert("View Profiles feature coming soon!");
+                } else {
+                  navigate("/signing");
+                }
+              }}
+            >
+              View Profiles
+            </button>
+            <Link to="/register">
+              <button className="btn-1">Sign Up</button>
+            </Link>
           </div>
         </div>
         <div className="right-cont">
           <img
             src="https://i.pinimg.com/1200x/12/d4/81/12d4810b9d25f866a98245e23c775351.jpg"
-            alt=""
+            alt="Dating couple"
           />
         </div>
       </div>

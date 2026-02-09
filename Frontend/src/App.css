@@ -26,10 +26,13 @@ input {
   border: none;
   padding: 0.2rem;
   text-align: center;
-  color: #dbd7d7;
+  color: #3d2c2e;
   margin: 0.5rem;
   width: 20rem;
   height: 2.5rem;
+}
+input::placeholder {
+  color: #dbd7d7;
 }
 .mini-cont {
   display: flex;
